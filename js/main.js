@@ -34,12 +34,6 @@
     window.requestAnimationFrame(updateIndicator);
   }, { passive: true });
 
-  track.addEventListener('wheel', function (event) {
-    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-    event.preventDefault();
-    track.scrollLeft += event.deltaY;
-  }, { passive: false });
-
   document.addEventListener('keydown', function (event) {
     var pageWidth = track.clientWidth;
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
