@@ -355,6 +355,125 @@ main {
   transform: translateY(-1px);
 }
 
+.toc-trigger {
+  position: fixed;
+  top: calc(var(--header-height) + 2.9167vw);
+  left: 6.25vw;
+  width: 6.81vw;
+  height: 6.806vw;
+  z-index: 96;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15, 23, 42, 0.55);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.toc-overlay.is-open {
+  display: flex;
+}
+
+.toc-panel {
+  background: var(--color-surface);
+  border-radius: 16px;
+  max-width: 520px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.toc-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.toc-panel__header h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.toc-close {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  color: var(--color-text-muted);
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+
+.toc-close:hover {
+  background: var(--color-bg);
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.toc-item {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  background: var(--color-bg);
+  aspect-ratio: 720 / 960;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.toc-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.toc-item__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.toc-item__title {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+
+.toc-item__num {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
 .page-nav {
   display: none;
   position: fixed;
@@ -607,6 +726,15 @@ footer {
   .page-indicator {
     bottom: 12px;
     font-size: 0.75rem;
+  }
+
+  .toc-panel {
+    padding: 16px;
+  }
+
+  .toc-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 
   .scroll-hint {
