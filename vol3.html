@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>수협 웹진 Vol.3</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 
 <body class="webzine-reader">
@@ -22,6 +22,18 @@
         <a href="archive.html">지난호</a>
       </nav>
     </header>
+
+    <button type="button" class="toc-trigger" id="toc-trigger" aria-label="목차 미리보기"></button>
+
+    <div class="toc-overlay" id="toc-overlay">
+      <div class="toc-panel">
+        <div class="toc-panel__header">
+          <h2>목차</h2>
+          <button type="button" class="toc-close" id="toc-close" aria-label="닫기">&times;</button>
+        </div>
+        <div class="toc-grid" id="toc-grid"></div>
+      </div>
+    </div>
 
     <main class="webzine-track" id="webzine-track">
 
@@ -132,7 +144,7 @@
         <img src="images/header.jpg" class="page-header" alt="수협재단">
         <div class="title-frame page-main" style="aspect-ratio: 720 / 2262;">
           <img src="images/2026_H1/12p.jpg" alt="" class="title-frame__bg">
-          <a href="#" class="page-link" style="left: 5.556%; top: 76.393%; width: 88.75%; height: 2.962%;">
+          <a href="https://naver.me/IDki6cUq" class="page-link" target="_blank" rel="noopener noreferrer" style="left: 5.556%; top: 76.393%; width: 88.75%; height: 2.962%;">
             <span class="visually-hidden">정답 입력하기</span>
           </a>
         </div>
@@ -181,7 +193,7 @@
 
   </div>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 
 </html>
