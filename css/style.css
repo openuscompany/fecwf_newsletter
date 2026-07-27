@@ -180,6 +180,7 @@ main {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   max-width: none;
   margin: 0;
   padding: 0;
@@ -207,6 +208,7 @@ main {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   background: var(--color-bg);
 }
 
