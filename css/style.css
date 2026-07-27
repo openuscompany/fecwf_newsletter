@@ -122,18 +122,18 @@ main {
 
 .cover-link {
   position: absolute;
-  bottom: 3.2%;
-  height: 7.8%;
-  width: 42%;
-  border-radius: 999px;
+  bottom: 5.87%;
+  height: 11.74%;
+  width: 36.11%;
+  border-radius: 16px;
 }
 
 .cover-link--home {
-  left: 5.5%;
+  left: 10.56%;
 }
 
 .cover-link--donate {
-  right: 5.5%;
+  right: 14.44%;
 }
 
 .cover-link:focus-visible {
@@ -230,6 +230,72 @@ main {
   height: auto;
 }
 
+.webzine-reader .media-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 720 / 3928;
+}
+
+.webzine-reader .media-embed > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.webzine-reader .media-embed__frame {
+  position: absolute;
+  left: 8.75%;
+  top: 3.691%;
+  width: 82.917%;
+  height: 8.019%;
+  border-radius: 2.7% / 5.1%;
+  overflow: hidden;
+}
+
+.webzine-reader .media-embed__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.webzine-reader .page-link {
+  position: absolute;
+  display: block;
+}
+
+.webzine-reader .title-frame {
+  position: relative;
+  width: 100%;
+}
+
+.webzine-reader .title-frame__bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.webzine-reader .page-title {
+  position: absolute;
+  height: auto;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.webzine-reader .page.is-active .page-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .webzine-reader .page-title {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .webzine-reader .page-footer {
   flex: 0 0 auto;
   width: 100%;
@@ -285,6 +351,42 @@ main {
 .webzine-reader .archive-link__inner a:hover {
   background: var(--color-accent-hover);
   transform: translateY(-1px);
+}
+
+.page-nav {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 95;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.webzine-reader .page-nav {
+  display: block;
+}
+
+.page-nav img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page-nav--prev {
+  left: 12px;
+}
+
+.page-nav--next {
+  right: 12px;
+}
+
+.page-nav:disabled {
+  display: none;
 }
 
 .page-indicator {
