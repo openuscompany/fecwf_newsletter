@@ -164,6 +164,8 @@ main {
 .webzine-reader .wrapper {
   height: 100%;
   min-height: 0;
+  position: relative;
+  container-type: inline-size;
 }
 
 .webzine-reader header {
@@ -356,11 +358,11 @@ main {
 }
 
 .toc-trigger {
-  position: fixed;
-  top: calc(var(--header-height) + 2.9167vw);
-  left: 6.25vw;
-  width: 6.81vw;
-  height: 6.806vw;
+  position: absolute;
+  top: calc(var(--header-height) + 2.9167cqw);
+  left: 6.25cqw;
+  width: 6.81cqw;
+  height: 6.806cqw;
   z-index: 96;
   padding: 0;
   border: none;
@@ -369,7 +371,7 @@ main {
 }
 
 .toc-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 200;
   background: rgba(15, 23, 42, 0.55);
@@ -476,7 +478,7 @@ main {
 
 .page-nav {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 95;
@@ -511,7 +513,7 @@ main {
 }
 
 .page-indicator {
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -531,7 +533,7 @@ main {
 }
 
 .scroll-hint {
-  position: fixed;
+  position: absolute;
   bottom: 56px;
   left: 50%;
   transform: translateX(-50%);
@@ -545,6 +547,21 @@ main {
 
 .scroll-hint.is-hidden {
   opacity: 0;
+}
+
+/* Desktop app-frame: center the mobile card with a neutral backdrop */
+
+@media (min-width: 641px) {
+  body.webzine-reader {
+    background: #e5e7eb;
+  }
+
+  .webzine-reader .wrapper {
+    width: 430px;
+    max-width: 430px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 20px 60px rgba(0, 0, 0, 0.18);
+  }
 }
 
 /* Archive link section (vertical pages) */
